@@ -36,6 +36,11 @@ public class Aquarium extends Habitat {
         this.swimable = swimable;
     }
 
+    public Aquarium(Moveable moveable, int size) {
+        super(moveable);
+        this.size = size;
+    }
+
     @Override
     public void add(Animal animal) {
         if(animal.getComfortableSpace() <= size){

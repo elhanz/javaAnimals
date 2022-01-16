@@ -32,8 +32,23 @@ public class Cell extends Habitat{
         this.flyable = flyable;
     }
 
+    public Cell(Moveable moveable, int size) {
+        super(moveable);
+        this.size = size;
+    }
+
     @Override
     public void add(Animal animal) {
-        super.add(animal);
+        if(animal.getComfortableSpace() <= size){
+            if(animal.Fly()==true && animal.Swim() == false && animal.Walk()==true){
+                super.add(animal);
+                System.out.println("Animal was added");
+            }else {
+                System.out.println("The environment is not suitable for the animal");
+            }
+        }else{
+            System.out.println("The environment is not suitable for the animal");
+        }
+
     }
 }

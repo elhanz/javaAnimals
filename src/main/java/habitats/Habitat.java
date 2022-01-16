@@ -34,4 +34,7 @@ public class Habitat {
         animals.add(animal);
     }
 
+    public void ShowAnimals(){
+        System.out.println(getAnimals().toString());
+    }
 }

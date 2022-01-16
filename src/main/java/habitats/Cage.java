@@ -35,10 +35,20 @@ public class Cage extends Habitat {
         super(moveable);
         this.walkable = walkable;
     }
+    public Cage(Moveable moveable, int size) {
+        super(moveable);
+        this.size = size;
+    }
+    public ArrayList<Animal>getS(){
+        return super.getAnimals();
+    }
     @Override
     public void add(Animal animal) {
         if(animal.getComfortableSpace() <= size){
-            if(animal.Fly()==false && animal.Swim() == true && animal.Walk()==false){
+            if(animal.Fly()==false && animal.Swim() == true && animal.Walk()==true){
+                super.add(animal);
+                System.out.println("Animal was added");
+            }else if(animal.Fly()==false && animal.Swim() == false && animal.Walk()==true){
                 super.add(animal);
                 System.out.println("Animal was added");
             }else{
